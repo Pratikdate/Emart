@@ -1,0 +1,639 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+     
+
+     
+
+<!-- add it to the head section of the html file -->
+
+<!--load static file-->
+{% load static %}    
+
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous"/>
+
+    
+    <link rel="stylesheet" href="{% static 'css\home\home_styles.css'%}" />
+
+    <script src="{% static 'js\home_js.js'%}"></script>
+    
+
+
+    {% block css %}
+    {% endblock %}
+    
+    <script>
+          
+          
+          
+          
+          
+          
+          
+
+
+          
+          
+              
+    </script>
+      
+
+    <title>My Startup</title>
+  </head>
+  <body id='body'onload='on_load_fun()'>
+{% if messages %}
+      {% for message in messages %}
+      
+         <div class="alert alert-{{ message.tags }} alert-dismissible fade show  px-2 my-0" style="z-index:1; position:; color:whight;width:100%;"role="alert" >{{ message }}
+           <button type="button" class="btn-close py-3" data-bs-dismiss="alert" aria-label="Close">
+      
+           </button>
+    
+        </div>
+    {% endfor %}
+{% endif %}      
+      
+ 
+   
+      
+<table class="nav-down">
+    <tr>
+        {% block nav_down %}
+       
+        
+        
+        
+        
+        {% endblock %}
+        
+        
+   
+        
+    
+    
+     
+        <td><div onclick='tab_nav_down_0()' class ="tab-nav-down">
+
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRbo70ywYUSV1uXgsDXmH8TZfgp3So1977d_3F3WjBVo_aClkOPd6RLjCPK&s=10 " height="30" ><br>
+          <lable  >Nav</lable>
+           
+            
+                
+               
+            </div>
+    
+           </td>
+        
+        <td><div  id="tab_nav_down_1"  class ="tab-nav-down"><a href="/"><img src=" https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRsMWB8gZ1f5RN2RnZkYALvPSxq8PyQ8Dqiug&usqp=CAU " height="30" ></a><br>
+          <lable>Home</lable>
+           </div>
+           </td>
+        
+{% if  request.user.is_anonymous %}        
+        
+        <td><div id="tab_nav_down_2" class ="tab-nav-down"><a href="/home/login"><img src=" https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRSYtMF5lUCNhU_dM2FxJ4rYbFhIYq-_R659A&usqp=CAU " height="30" ></a><br>
+          <lable>Login</lable>
+           </div>
+           </td>
+{% endif %}
+        <td><div id="tab_nav_down_3"  class ="tab-nav-down"><a href="/home/requirement"><img src=" https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSwDqWuINnnJ3F9UOLsS5tlDN1lhIEKw9YlYQ&usqp=CAU " height="30"   ></a><br>
+          <lable> Requirement</lable>
+           </div>
+           </td>
+        <td><div  id="tab_nav_down_4"  class ="tab-nav-down"><a href="/home/search"><img src=" https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRQwusZyjnlDXzeCifxluq7ZMsSP0HKJDI0zg&usqp=CAU " height="30"   ></a><br>
+          <lable>Search</lable>
+           </div>
+            
+           </td>
+        <td><div  id="tab_nav_down_5"   class ="tab-nav-down"><a href="/home/News"><img src=" https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRYBmLD5Zu9YiCLyPdNCGlnu8ukorGhlFeNrQ&usqp=CAU " style='{{css_style_5}}'height="30"   ></a><br>
+          <lable>Buisness News</lable>
+           </div></td>
+       </tr>
+    
+</table>      
+           
+      
+      
+      
+ 
+
+      
+      
+      
+
+      
+      
+      
+      
+      
+      
+
+      
+
+<div class='nav' onclick='tab_nav_down_0()' ><img  class="nav" src="https://img.icons8.com/fluency/452/menu-rounded.png" ></div>
+    
+    
+       <div id='nav_box'>
+ 
+        
+
+           
+ 
+    
+           <div onclick='close_nav()'class='close_img'>
+               <img src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRdz7hl2BMP6EQpMnzVq301psShc1iPuYUYGw&usqp=CAU ' >
+            </div>
+    <ul >
+        
+              
+   <div class="nav-item"  style=' {{style_nav_item_1}} border-radius:0.51rem;'><a href="/nav/why_we_are" > <img src=" https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQAqiFUUIw6SBQecMEt_7032MsPX3-KOjIHOg&usqp=CAU "   height="30">
+    <lable class="lable" >Why We Are ?</lable></a><br></div>
+  <div class="nav-item" style=' {{style_nav_item_2}} border-radius:0.51rem;'> <a href="/" > <img src=" https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRUiNL3OzOxN6ce7IAzV0dGa68zYn8PpN7gsQ&usqp=CAU "   height="30">
+    <lable class="lable">Home</lable></a><br></div>
+    <div class="nav-item"   style=' {{style_nav_item_3}} border-radius:0.51rem;'><a href="  /home/login  "> <img src=" https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRSYtMF5lUCNhU_dM2FxJ4rYbFhIYq-_R659A&usqp=CAU "   height="30">
+    <lable class="lable">Login</lable></a><br></div> 
+   <div class="nav-item"  style=' {{style_nav_item_4}} border-radius:0.51rem;' ><a href="/home/search"> <img src=" https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRQwusZyjnlDXzeCifxluq7ZMsSP0HKJDI0zg&usqp=CAU "   height="30">
+    <lable class="lable">Search</lable></a><br></div>
+    
+    <div class="nav-item-comp"  style=' {{style_nav_item_5}} border-radius:0.51rem;' ><a href="/home/requirement"> <img src=" https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSwDqWuINnnJ3F9UOLsS5tlDN1lhIEKw9YlYQ&usqp=CAU "   height="30">
+    <lable class="lable">send Requirement</lable></a><br></div> 
+        
+    <div class="nav-item-comp"  style=' {{style_nav_item_6}} border-radius:0.51rem;' ><a href=  "/home/News"    > <img src=" https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRYBmLD5Zu9YiCLyPdNCGlnu8ukorGhlFeNrQ&usqp=CAU "   height="30">
+    <lable class="lable">Buisness News</lable></a><br></div> 
+    
+    
+   <div class="nav-item"  style=' {{style_nav_item_7}} border-radius:0.51rem;' ><a href="/product_manager/manager_account_form "> <img src=" https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQeCxAH6CV4NSJ9EgAfkR6Cqs3gYwbSyrbEsw&usqp=CAU "   height="30">
+    <lable class="lable">Product Manager</lable></a><br></div>
+   <div class="nav-item"><a href="/home/nav/add_products   " style=' {{style_nav_item_8}} border-radius:0.51rem;'> <img src=" https://img.icons8.com/ios/452/product--v1.png "   height="30">
+    <lable class="lable">Add Product or services</lable></a><br></div>
+    <div class="nav-item" style=' {{style_nav_item_9}} border-radius:0.51rem;' ><a href='/nav/contract'> <img src="  https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR5xTj8AsG08VmsHmSuTL9hUb_gipvcOcmt-g&usqp=CAU "   height="30">
+    <lable class="lable">Digital Contract</lable></a><br></div>
+   <div class="nav-item" style=' {{style_nav_item_10}} border-radius:0.51rem;' ><a href='/nav/shiping_enquiry'> <img src=" https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRNmEqkf91MktCRWlAhsIrYXyC4Bk2GP0KZOQ&usqp=CAU "   height="30">
+    <lable class="lable">Ship With Me</lable></a><br></div>
+   
+    <div class="nav-item-comp" style=' {{style_nav_item_11}} border-radius:0.51rem;' ><a href="/product_manager/My_products"> <img src=" https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRk85S1onZP8-MbH6ru4coAJHmKMtDGiUds-w&usqp=CAU "   height="30">
+    <lable class="lable">Products added</lable></a><br></div> 
+    
+    <div class="nav-item-comp"  style=' {{style_nav_item_12}} border-radius:0.51rem;' ><a href="/product_manager/Order_get"> <img src=" https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRk85S1onZP8-MbH6ru4coAJHmKMtDGiUds-w&usqp=CAU "   height="30">
+    <lable class="lable">Orders Get</lable></a><br></div> 
+    <div class="nav-item-comp"  style=' {{style_nav_item_13}} border-radius:0.51rem;'  ><a href="/product_manager/graph"> <img src=" https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRk85S1onZP8-MbH6ru4coAJHmKMtDGiUds-w&usqp=CAU "   height="30">
+    <lable class="lable">Graph Draw</lable></a><br></div> 
+    
+    <div class="nav-item"  style=' {{style_nav_item_14}} border-radius:0.51rem;' ><a href="/nav/product_ordered "> <img src=" https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTvqoNOb1ayaOVabvQ3SM2MArxL_v6CwoZbsg&usqp=CAU "   height="40">
+    <lable class="lable">My Orders</lable></a><br></div>
+        <div class="nav-item" style=' {{style_nav_item_15}} border-radius:0.51rem;' ><a href="/nav/product_wish_list"> <img src=" https://cdn-icons.flaticon.com/png/128/3119/premium/3119778.png?token=exp=1655133126~hmac=1bda9a73d1ea6de6497bb49dd4283ddb "   height="40">
+    <lable class="lable "> My wish list</lable></a><br></div>
+   <div class="nav-item"  style=' {{style_nav_item_16}} border-radius:0.51rem;' ><a href="/nav/help"> <img src=" https://cdn-icons.flaticon.com/png/128/3718/premium/3718077.png?token=exp=1655136733~hmac=c40838be9a2e8f46fa528053d24d1269 "   height="40">
+    <lable class="lable">Help</lable></a><br></div>
+    
+    
+    
+  <div class="nav-item" style="display:{{none_get}};margin:0 0 3rem 0;  {{style_nav_item_17}} border-radius:0.51rem; "><a href="/product_manager/manager_account_update/{{model.slug}}"> <img src=" https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQeCxAH6CV4NSJ9EgAfkR6Cqs3gYwbSyrbEsw&usqp=CAU "   height="30">
+    <lable class="lable">Edit Manager account</lable></a><br></div>
+    
+      
+    
+    
+
+
+        
+        
+      </ul>
+      
+ </div>
+    {% block body %}  
+      
+   
+    
+
+
+      
+      
+<div class="tital-page">
+    
+    <spam class='brand_name'>brand name</spam> 
+    <a id="first_letter_user"     href="/user/{{user_profile.id}}" class="user-page"                      ></a>
+    
+    
+    
+    
+    
+    <script type="text/javascript">
+        var f_n='{{user.username}}';
+        f_n=f_n[0]
+        
+        document.getElementById("first_letter_user").innerHTML =f_n;
+        
+    
+</script>
+        <!--  type="button" --> 
+        
+      
+    
+      <form class="d-flex" method="Get" action="/search/search_user">
+     
+        <input class="search" type="search" placeholder="  search product or service" aria-label="Search" name='search' value='{{search_term}}'  > 
+        
+      </form> 
+           
+           
+           
+</div>
+      
+
+      
+      
+
+<table class='type_system'>
+    <tr>
+        <td>
+            <a href='/'style='font-weight:{{style_weight_product}};'>Products</a>
+            
+        </td>
+        <td>
+            <a href='/home/manufacturs'  style='font-weight:{{style_weight_manufacture}};' >Manufacturs</a>
+        </td>
+    </tr>
+    
+</table>
+      
+        
+        
+      
+     
+
+      
+
+
+   
+      
+
+    
+  
+<table class='top_scroll_box_choises'>
+    <tr>
+    <p style='font-weight:500;font-size:1.3rem;margin:2rem 0 0 1rem;'>For Your Buisness</p>
+    
+        <td><div class='top_scroll_in' style='background-color:#fd5e16  ;  ' ><a href='/home/all_category'>All categories <img src='https://cdn-icons-png.flaticon.com/128/6938/6938057.png '></a></div></td>
+        <td><div class='top_scroll_in' style='background-color: #382b97;  ' ><a href='/home/tech_support'>Tech support <img src='https://cdn-icons.flaticon.com/png/128/3246/premium/3246853.png?token=exp=1660325466~hmac=f2e1b3df78365297d747ed5a71104807'> </a></div></td>
+        <td><div class='top_scroll_in' style='background-color:#882b97 ; ' ><a href='/home/company_searvice'>Company searvices  <img src='https://cdn-icons-png.flaticon.com/128/2058/2058768.png '>  </a></div></td>
+        <td><div class='top_scroll_in'style='background-color: #2b5497 ;  '   ><a href='/home/logistic'> Logistics <img src='https://cdn-icons-png.flaticon.com/128/2166/2166903.png '> </a></div></td>
+    </tr>
+    
+    
+<table>
+
+        
+        
+       
+      
+      
+      
+{% block manufacture %}     
+
+    
+      
+<table class="block-1">
+    <h4 class ="block-name">Company Products</h4>  
+    <tr>
+{% for product in company_product %}      
+ 
+       
+        <td><div class ="block-item"><a href="  home/after_product_click/{{product.slug}} " target=”_blank”  ><img src=" https://images.unsplash.com/photo-1555041469-a586c61ea9bc?crop=entropy&cs=tinysrgb&fm=jpg&ixlib=rb-1.2.1&q=60&raw_url=true&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8c29mYXxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=1100  "   ></a><br>
+           
+            <div class="block-tital">
+
+                <div class="header" >
+                <h8   >   {{product.Product_Discription}}  </h8></div>
+                <h8 class="price-header">₹ {{product.Product_Price}}  </h8><br/>
+                <h11><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTWAF8b_ZnB76n_t988z6fty97TxPhHrcxhXg&usqp=CAU " height="12" width="10"alt=""> 
+            {{product.Address}}  </h11><br/>
+                
+                
+               
+             
+               
+               <!-- <h11>{{product.Company_Name}}</h11>-->
+                
+                <p > {{product.Views}} Views</p>
+                <a  data-bs-toggle="dropdown"  aria-expanded="" roal='button' href='/seting/product_block'  style='width:3rem;height:3rem;margin:0rem 0 0 0rem;' ><img src='https://cdn-icons-png.flaticon.com/128/225/225287.png ' height='20' ></a>
+                <ul class="dropdown-menu">
+                    
+                        
+                      
+   
+                    <a class='toggle_more' type='submit' href='/product_add_to_explore/{{product.slug}}' >Add to explore list</a><br>
+                       
+                    
+                    <a  class='toggle_more'   href="/nav/why_we_are" >Location</a><br>
+                    <a  class='toggle_more'   href="/nav/why_we_are" >Contact Sellar </a><br>
+                    <a class='toggle_more' href="/nav/why_we_are" >Not intrested Product </a><br>
+  
+                    </ul>
+              
+                
+              
+
+              
+           </div>
+           </div>
+           </td>
+           
+           
+        {%endfor%}   
+           
+       </tr>
+</table>      
+      
+<div class="Add-1"  >
+    Add
+</div> 
+      
+      
+      
+      
+
+<table class="block-1">
+    <h4 class ="block-name">Top-ranking</h4>     
+      
+      <tr>
+{% for product in top_rank_product %}      
+ 
+        <td>
+       <div class ="block-item"><a href=" home/after_product_click/{{product.slug}} " target=”_blank” >
+           <img src=" https://images.unsplash.com/photo-1555041469-a586c61ea9bc?crop=entropy&cs=tinysrgb&fm=jpg&ixlib=rb-1.2.1&q=60&raw_url=true&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8c29mYXxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=1100 "   >
+           </a>
+            <div class="block-tital">
+
+                <div class="header" >
+                <h8   >   {{product.Product_Discription}}  </h8></div>
+                
+                <h8 class="price-header">₹ {{product.Product_Price}}</h8><br/>
+              
+                <h11><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTWAF8b_ZnB76n_t988z6fty97TxPhHrcxhXg&usqp=CAU " height="12" width="10"alt=""> 
+            {{product.Address}}  </h11><br/>
+                
+                <!--<h11>{{product.Company_Name}}</h11>-->
+                
+                <p > {{product.Views}} Views</p>
+                <a  data-bs-toggle="dropdown"  aria-expanded="" roal='button' href='/seting/product_block'  style='width:3rem;height:3rem;margin:0 0 0 0;' ><img src='https://cdn-icons-png.flaticon.com/128/225/225287.png '  ></a>
+                <ul class="dropdown-menu">
+                    <a class='toggle_more' href="/nav/why_we_are" >Add to explore list</a><br>
+                    <a  class='toggle_more'   href="/nav/why_we_are" >Location</a><br>
+                    <a  class='toggle_more'   href="/nav/why_we_are" >Contact Sellar </a><br>
+                    <a class='toggle_more' href="/nav/why_we_are" >Not intrested Product </a><br>
+  
+                    </ul>
+              
+                
+                
+
+        
+           </div>
+           </div>
+            </td>
+          {%endfor%}
+           </tr>
+        
+</table>      
+    
+      
+<div class="Add-1"  >
+    Add
+</div> 
+      
+      
+      
+
+      
+<table class="block-1">
+    <h4 class ="block-name">New arrivals</h4>     
+      
+ 
+       <tr>
+          {% for product in new_arival_product %}       
+        <td><div class ="block-item"><a href=" home/after_product_click/{{product.slug}}  "  target=”_blank” ><img src=" https://images.unsplash.com/photo-1580587771525-78b9dba3b914?crop=entropy&cs=tinysrgb&fm=jpg&ixlib=rb-1.2.1&q=60&raw_url=true&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTF8fHJlYWwlMjBlc3RhdGV8ZW58MHx8MHx8&auto=format&fit=crop&w=1100 "   ></a><br>
+            <div class="block-tital">
+                <div class="header" >
+                <h8   >   {{product.Product_Discription}}  </h8></div>
+                
+                <h8 class="price-header">₹ {{product.Product_Price}} </h8><br/>
+              
+                <h11><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTWAF8b_ZnB76n_t988z6fty97TxPhHrcxhXg&usqp=CAU " height="3" width="3"alt="" > 
+            {{product.Address}}   </h11><br/>
+                <!--<h11>{{product.Company_Name}}</h11>-->
+               
+                <p >{{product.Views}} Views</p>
+                <a  data-bs-toggle="dropdown"  aria-expanded="" roal='button' href='/seting/product_block'  style='width:3rem;height:3rem;margin:0 0 0 0;' ><img src='https://cdn-icons-png.flaticon.com/128/225/225287.png '  ></a>
+                <ul class="dropdown-menu">
+                    <a class='toggle_more' href="/nav/why_we_are" >Add to explore list</a><br>
+                    <a  class='toggle_more'   href="/nav/why_we_are" >Location</a><br>
+                    <a  class='toggle_more'   href="/nav/why_we_are" >Contact Sellar </a><br>
+                    <a class='toggle_more' href="/nav/why_we_are" >Not intrested Product </a><br>
+  
+                    </ul>
+              
+                
+              
+                
+                
+            </div>
+           </div>
+          </td>  
+    
+           {%endfor%}
+
+        </tr>
+
+</table>      
+    
+     
+          
+                
+                        
+           
+        
+      
+      
+      
+      
+
+<div class="Add-1"  >
+    Add
+</div> 
+      
+<table class='vertical_block'>
+    
+ {% for product in all_product%}  
+    <tr>
+       
+    <td><div class='vertical_block_1'>
+        <a class='vertical_product_img' href=' home/after_product_click/{{product.slug}} ' target=”_blank” >
+            
+        <img src='https://images.unsplash.com/photo-1523275335684-37898b6baf30?crop=entropy&cs=tinysrgb&fm=jpg&ixlib=rb-1.2.1&q=60&raw_url=true&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8cHJvZHVjdHxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=1100 ' arc='....'>
+         </a>
+    
+        <div class='vertical_product_tital'   >
+     
+                <h8 class="ver_header" >    {{product.Product_Discription}}...  </h8><br/>
+            </div>
+                <p class="ver_price-header">₹ {{product.Product_Price}} </p><br/>
+        
+        <div class='vertical_product_text'>
+            <h11><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTWAF8b_ZnB76n_t988z6fty97TxPhHrcxhXg&usqp=CAU  " height="14" width="10"alt="" > 
+            {{product.Address}}   </h11><br/>
+            
+            <!-- <h11>{{product.Company_Name}}</h11>-->
+                
+                <p > {{product.Views}} Views </p>
+            </div>
+            <div class='vertical_product_togle'>
+                <a  data-bs-toggle="dropdown"  aria-expanded="" roal='button' href='/seting/product_block'  style='width:3rem;height:3rem;margin:0 0 0 0;' ><img src='https://cdn-icons-png.flaticon.com/128/225/225287.png '  ></a>
+                <ul class="dropdown-menu">
+                    <a class='toggle_more' href="/nav/why_we_are" >Add to explore list</a><br>
+                    <a  class='toggle_more'   href="/nav/why_we_are" >Location</a><br>
+                    <a  class='toggle_more'   href="/nav/why_we_are" >Contact Sellar </a><br>
+                    <a class='toggle_more' href="/nav/why_we_are" >Not intrested Product </a><br>
+  
+                    </ul>
+      
+       </div>
+        </div>
+    
+        </td>
+        
+        
+        
+     
+        <!--
+        <td><div class='block_1'>
+        <a class='vertical_product_img' href=' home/after_product_click/{{product.slug}} ' >
+        <img src='https://images.unsplash.com/photo-1542291026-7eec264c27ff?crop=entropy&cs=tinysrgb&fm=jpg&ixlib=rb-1.2.1&q=60&raw_url=true&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTB8fHByb2R1Y3R8ZW58MHx8MHx8&auto=format&fit=crop&w=1100 ' arc='....'>
+         </a>
+    
+        <div class='vertical_product_tital'>
+     
+                <h8 class="header">    {{product.Product_Discription}} <spam>...</spam></h8>
+            
+            <br/>
+            </div>
+                <p class="price-header">₹ {{product.Product_Price}}</p><br/>
+          
+        
+        <div class='vertical_product_text'>
+            <h11><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTWAF8b_ZnB76n_t988z6fty97TxPhHrcxhXg&usqp=CAU " height="14" width="10"alt="" > 
+            {{product.Address}}   </h11><br/>
+            
+            <!-- <h11>{{product.Company_Name}}</h11>
+                 
+            <p > {{product.Views}} Views</p>
+            
+          </div>
+            <div class='vertical_product_togle'>
+                <a  data-bs-toggle="dropdown"  aria-expanded="" roal='button' href='/seting/product_block'  style='width:3rem;height:3rem;margin:0 0 0 0;' ><img src='https://cdn-icons-png.flaticon.com/128/225/225287.png '  ></a>
+                <ul class="dropdown-menu">
+                    <a class='toggle_more' href="/nav/why_we_are" >Add to explore list</a><br>
+                    <a  class='toggle_more'   href="/nav/why_we_are" >Location</a><br>
+                    <a  class='toggle_more'   href="/nav/why_we_are" >Contact Sellar </a><br>
+                    <a class='toggle_more' href="/nav/why_we_are" >Not intrested Product </a><br>
+  
+                    </ul>
+     
+       </div>
+        </div>
+    
+        </td>
+       -->
+         {%endfor%}
+          
+        </tr>
+        
+</table>
+      
+      
+      
+      
+   
+               
+   
+      
+ 
+      
+
+         
+      
+       
+      
+{% endblock %}
+
+       
+<div class="end">   
+          
+             <a class="btn  "         type="button" href="/"  >Add Product 
+        </a>
+    
+<table class="end-block">
+    <tr>
+        <td><p>about us</p></td>
+        <td><p>Costemer Care</p></td>
+       <td> <p>Descop Sit</p></td>
+    </tr></table>
+<table class="end-block-img">
+    <tr>
+        <td><a href=""><img src=" https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS_L3NnPNwKtOJjjYgxuaQUF0D3RVda6U5ntw&usqp=CAU  " ></a></td>
+        <td><a href=""><img src=" https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTOoYkSUMp3OMnLPS2A7xr0mrmORNhKwdQjMQ&usqp=CAU  " ></a></td>
+        <td><a href=""><img src=" https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRShcO4dJv-5paVnIJiVsvFWk6dgbA4MnWd4Q&usqp=CAU  " ></a></td>
+
+    </tr>
+    <img class="end-img"src="  https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQOvD4TGFAD1NLsOJjtre_WhaAIjuD4u1_7cg&usqp=CAU  ">
+    
+      
+      
+</table>    
+</div>     
+      
+        
+           
+       
+      
+     
+
+      
+
+      
+
+                 
+      
+
+
+
+  
+ {% endblock %}  
+      <style>
+          
+          
+      </style>
+  
+
+    <!-- Optional JavaScript; choose one of the two! -->
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous">
+        
+      
+      
+      </script>
+    
+
+     <!--Option 2: Separate Popper and Bootstrap JS -->
+    <!--
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous">
+-->
+    
+  </body>
+</html>

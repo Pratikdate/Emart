@@ -1,0 +1,67 @@
+{% extends "home/home.html" %}
+
+
+{% block css %}
+<style>
+    
+  
+
+
+</style>
+{% endblock %}
+
+{% block nav_down %}
+<td><div class ="tab-nav-down">
+    <a href="/product_manager/Order_get"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRk85S1onZP8-MbH6ru4coAJHmKMtDGiUds-w&usqp=CAU " height="30" ></a><br>
+          <lable>Orders </lable>
+           </div>
+           </td>
+<td><div class ="tab-nav-down">
+    <a href="/product_manager/graph"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRMLSLkT73-ZRhAIJD_GHo_res7UIWZ1RAGpA&usqp=CAU " height="30" ></a><br>
+          <lable>Performance </lable>
+           </div>
+           </td>
+
+
+
+ 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+
+
+{% endblock %}
+
+
+{% block body%}
+<canvas id="myChart" style="height:40rem;width:100%;max-width:600px"></canvas>
+
+<script>
+var xValues = ['january','farvary','March','April','May','June','Jully','Augast','Saptember','Octomber','November','Disember'];
+var yValues = [10,20,30,40,50,60,70,80,90,100];
+
+new Chart("myChart", {
+  type: "line",
+  data: {
+    labels: xValues,
+    datasets: [{
+      fill: false,
+      lineTension: 0,
+      backgroundColor: "rgba(0,0,255,1.0)",
+      borderColor: "rgba(0,0,255,0.1)",
+      data: [10,7,40,60,20]
+    }]
+      },
+    
+    
+  options: {
+      
+    legend: {display: false},
+    scales: {
+      yAxes: [{ticks: {min: 10, max:100}}],
+    },
+      
+  }
+});</script>
+
+
+{% endblock %}
+

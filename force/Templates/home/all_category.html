@@ -1,0 +1,162 @@
+{% extends "home/home.html" %}
+
+{%block css%}
+<style>
+    
+    .company_head_detail{
+        height:10rem;
+        width:24.4rem;
+        
+        display:flex;
+        position:absolute;
+        
+    }
+    .company_detail_text{
+        padding:0 0 0 1rem;
+        
+    }
+     .company_head_detail p{
+        margin:0 0 0 0;
+        font-size:1rem;
+        font-weight:500;
+         display:inline-flex;
+        
+    }
+    
+      
+       
+    
+    .company_head_detail a img{
+        height:3rem;
+        width:3rem;
+        margin:0 0 0 2rem;
+         border-radius:1rem;
+        box-shadow:0 2px 4px 0 rgba(0,0,20,10);
+     
+    }
+    .scroll_part_comp_product{
+        height:14rem;
+        width:24.4rem;
+        
+       
+        position:;
+        margin:3rem 0 0 0 ;
+        display:flex;
+        overflow:scroll;
+        overflow-y:hidden;
+        position:relative;
+       }
+     
+        
+    
+        
+    
+    .product_img{
+        height:12rem;
+        width:10.1rem;
+         text-align:center;
+        margin:2rem 0 0 2rem;
+        
+        
+    }
+    .product_img a img{
+        height:10rem;
+        width:10rem;
+       margin:0 0 0.2rem 0;
+        border-radius:1rem;
+       
+    }
+    .company_choice_category{
+        height:3.9rem;
+        width:24.4rem;
+        display:flex;
+        overflow:auto;
+        overflow-y:hidden;
+        position:relative;
+       margin:2rem 0 0 0;
+     
+    }
+    .company_choice_category_item {
+        margin:0.5rem 0 0 0.8rem;
+        height:2rem;
+        width:12rem;
+        
+        
+        border: 0.04rem solid;
+        display:flex;
+        
+        border-radius:0.8rem;
+        
+   
+       
+    }
+    .company_choice_category_item p{
+        font-size:1rem;
+        font-weight:300;
+        margin:0 0 0 1rem;
+        
+
+        
+    }
+
+
+
+</style>
+{% endblock%}
+
+
+{% block manufacture %}
+
+
+{% for key, value in products.items %}
+<table>
+    <h4 class ="block-name"></h4>     
+      
+ <tr>
+       
+          <td>
+           
+         
+                  <div class='company_head_detail  '>
+                      
+                  
+                  <a class='img_company_logo' href='#'><img src='https://www.freepnglogos.com/uploads/starbucks-logo-png-25.png '></a><br/>
+                          
+                 
+                  
+                  
+             
+              
+          
+           
+             <div class='company_detail_text'>
+                   <p class='company_name'>{{key}} Products </p><br/>
+                   <spam class='header'>company verification</spam><br/>
+                 </div>
+             </div>
+                          
+                  <div class='scroll_part_comp_product'>
+          {%for product in value %}
+                      
+                      
+    
+           <div class ='product_img'>
+            <a  href=''><img src=' https://images.unsplash.com/photo-1555041469-a586c61ea9bc?crop=entropy&cs=tinysrgb&fm=jpg&ixlib=rb-1.2.1&q=60&raw_url=true&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8c29mYXxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=1100 '></a>
+            <p class='price-header'>{{product.Product_Price}}</p>
+         </div>
+            {%endfor%} 
+                  
+                      
+          </div>        
+             
+      
+             
+  
+        
+   
+  </tr>
+</table>      
+{%endfor%}  
+      
+
+{% endblock %}

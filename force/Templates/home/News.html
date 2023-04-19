@@ -1,0 +1,75 @@
+{% extends "home/home.html" %}
+
+
+{% block css %}
+<style>
+     .search{
+                     
+              height:40px;
+              width:90%;
+              margin:6rem 0 4rem 1rem;
+              font-size:1rem;
+              text-align:left;
+            border:solid lightgray;
+          padding:0 0 0 1rem;
+              border-radius:6px;
+            
+          
+          }
+    .search:hover{
+        border: lightgray;
+    }
+    
+        
+    
+    
+   
+    
+    .block{
+              margin:0rem 0 0 0;
+              height:;
+              width:100%;
+              border: solid lightgray;
+              padding:4% 0 3% 5%;
+}
+    .space{
+        margin:4rem 0 0 0;
+
+    }
+
+    
+        
+    
+    
+   
+
+
+</style>
+{% endblock %}
+
+{% block body %}
+
+<form class="d-flex" method="Get" action="/home/News">
+     
+        <input class="search" type="search" placeholder="Search" aria-label="Search" name='search' value='{{search_term}}'  > 
+        
+ </form> 
+
+{% for item in datanews  %}
+ 
+      
+<div class="block" >
+    
+      <a href="{{item.url}}"><img src="{{item.image}}" class="block-img"></a><br>
+    <p >{{item.title}}</p>
+    <img  src='//logo.clearbit.com/{{item.source.url}} 'height="16" style="margin: 0 0.5rem 0 0;">
+    <lable style="font-size:12px;"> {{item.source.name}}</lable>
+      
+ 
+      
+</div>   
+
+
+{% endfor %}
+<div class='space'></div>
+{% endblock %}

@@ -1,0 +1,98 @@
+{% extends "home/home.html" %}
+
+
+{% block css %}
+<style>
+    .form{
+        border-radius:10px;
+        height:109rem;
+        width:90%;
+        padding:40px 20px;
+        box-shadow:0 4px 7px 0;
+        margin:50px 15px;
+        color:gray;
+        
+    
+    }
+
+    .form-body{
+        margin-top:30px;
+        
+    
+    }
+
+    .form-input{
+        
+        margin:7px 25px;
+        border-radius:6px;
+        height:38px;
+        width:300px;
+        border:0.2px solid;
+        
+    }
+    
+    .form-lable{
+        margin:40px 0px;
+        
+    }
+    .form-in{
+        width:300px;
+        
+        border-radius:6px;
+        margin:0px 25px;
+    
+    }
+    .btn-primary{
+        height:40px;
+        width:120px;
+        margin:50px 0px;
+        border-radius:6px;
+        
+
+    }
+    .head-text{
+        margin-bottom:10px;
+        
+
+    }
+    .img-input{
+       
+        margin:7px 25px;
+        
+
+    }
+   
+
+
+
+
+</style>
+{% endblock %}
+
+{% block body %}
+
+<form class="form" method="POST" >  
+    
+    {% csrf_token %} 
+    <h3 calss="head-text" >Company Account</h3>
+    <hr/>
+    {{form.as_p}}
+    
+    
+  
+    
+        
+        
+        
+        <a href="/product_manager/company_manager_account_form">Continue For Registered Company</a>
+        <button type="submit" class="btn-primary px-3 mx-1">submit</button><br>
+       
+    
+    
+    
+
+</form>
+
+
+
+{% endblock %}

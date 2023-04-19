@@ -1,0 +1,339 @@
+{% extends "home/home.html" %}
+
+
+{% block css %}
+<style>
+    .top-set{
+        box-shadow:0 4px 5px 0 rgba(0, 0, 0 ,0.3);
+        display:flex vertical;
+        
+        height:31rem;
+        font-family:;
+        font-weight:300;
+        padding: 0 1rem 0 0rem;
+        
+    }
+    .product_img{
+        margin:0rem 0 1rem 0rem;
+        height:15rem;
+       
+    
+    }
+    
+    
+    .product_img img{
+        height:15rem;
+        width:24.6rem;
+        
+        
+        
+    }
+    .top-set img{
+        margin:0.5rem 0 0 0rem;
+       
+        
+    }
+    
+    
+    .box-detail{
+        
+        height:90px;
+        
+        margin:8px 0 0 30px;
+        
+        
+       
+        
+
+    }
+    .box-detail h6{
+        font-weight:500;
+    }
+    
+       
+    
+    .company_logo img{
+        height:50px; 
+        width:50px ;
+         border-radius:10px;
+        margin:-3rem 0 0 0.6rem; 
+        
+    }
+    .com-detail{
+        
+        
+        margin:1rem 0 0 2rem;
+
+    }
+    .address-detail{
+        margin: 0 0 0 40px;
+        
+    }
+    .order_now{
+        
+       
+        border-radius:5px;
+        height:34px;
+        width:350px;
+        padding-top:5px;
+        border:bold;
+        box-shadow:0 4px 5px 0;
+        text-align:center;
+        text-decoration:none;
+        margin:2rem 0 0 1.4rem;
+        z-index:2;
+        
+
+    }
+    .block-product{
+        height:14rem;
+              
+              
+              padding:0 0 1rem 0;
+              display:flex;
+              box-shadow:0 4px 10px 0;
+              
+              
+          
+          }
+    
+    
+         .block_img{
+              height:10rem;
+              width:9rem;
+              margin:0 8px 0 0;
+              
+}
+    .block_aftpro{
+        display:flex;
+              height:10rem;
+              width:24.3rem;
+              box-shadow:0 4px 10px 0;
+              
+              margin:1rem 0px 0rem 0rem;
+
+    }
+   
+    .block_detail{
+            
+              margin:0px 0 10px 10px;
+
+          }
+        
+
+          .block_detail h8{
+              font-weight:bold;
+              font-size:1rem;
+              
+          }
+          .block_detail p{
+              opacity:0.6;
+              font-size:0.9rem;
+             
+          }
+    .map_location{
+        margin:-4rem 0 0rem 18rem;
+
+    }
+    
+   
+
+
+</style>
+{% endblock %}
+{% block nav %}
+{%endblock%}
+{% block body%}
+
+
+<div class="top-set"> 
+    <div class='product_img'>
+    <img src="      
+         https://images.unsplash.com/photo-1555041469-a586c61ea9bc?crop=entropy&cs=tinysrgb&fm=jpg&ixlib=rb-1.2.1&q=60&raw_url=true&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8c29mYXxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=1100 " alt="" align="center"style="box-shaddow:0 4px 5px 0;z-index:2; " ></div>
+    
+<div class="box-detail">
+    
+         
+        <h6>{{product.Product_Name}} </h6>
+        <h6>₹{{product.Product_Price}}       </h6>
+    <p > {{product.Views }} Views   &nbsp;  &nbsp;
+        <a href='{{product.Youtube_Video_URL}}   '>
+        <img src=" https://cdn.pixabay.com/photo/2021/06/25/04/20/youtube-6362801_1280.png " align="right" alt="" height="25"
+            style="margin:0 4rem 0rem 0; " > </a>
+        <img src="   https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRgQ3Iq7kdmAYocCnrnCBswAdptdPEo5OssWQ&usqp=CAU " align="right" alt="" height="30" style="margin:0 0rem 0rem 0; " > </p>
+    
+    <hr/ >
+    </div>
+     
+    
+    
+   
+    
+      
+          
+          
+          
+        
+        
+
+       
+           
+           
+           
+        
+           
+           
+      <div class="com-detail">
+          
+          
+          <p   class="address-detail">{{product.Company_Name}} </p> 
+        <h8 class="address-detail">           <img src=" https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTmnVNOS529zusZTsI_zYPxMoQTskR4fB6fzw&usqp=CAU " height="15" width="15" style="border-radius:10px; margin:0 0rem 0 0px; margin-bottom:0px; "> {{product.Address}} 
+            
+          </h8>
+          
+        <p  class="address-detail" >           <img src=" https://cdn4.iconfinder.com/data/icons/e-commerce-shopping-1-1/64/E_Commrnce_and_shopping_1-06-512.png " height="15" width="15" style="border-radius:10px; margin:0 4px 0 0; margin-bottom:0px; ">{{product.Gst_No}}</p>
+          
+          
+         <div  class='map_location' > <a href='https://maps.google.com/{{product.Address}}'><img src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ8WvLEdtDuYUy8XTayzikb0aGuTS3oIBfqgA&usqp=CAU ' height='25' >
+          </a></div>
+          
+
+         
+         
+           
+
+    </div>
+    <div  class="company_logo" >
+    <img    src="      
+                     https://www.freepnglogos.com/uploads/starbucks-logo-png-25.png"  ></div>
+    
+     
+    
+    
+    
+        <a class="order_now"         type="button" href="product/enquiry/{{product.slug}} "  >Enquiry Now
+        </a>  
+   
+ </div>  
+
+
+
+
+
+<div style='margin:3rem 0 0 0;'>
+
+
+
+
+<table class='vertical_block'>
+    
+ {% for product in products%}  
+    <tr>
+       
+    <td><div class='block_1'>
+        <a class='vertical_product_img' href=' home/after_product_click/{{product.slug}} ' target=”_blank” >
+            
+        <img src='https://images.unsplash.com/photo-1523275335684-37898b6baf30?crop=entropy&cs=tinysrgb&fm=jpg&ixlib=rb-1.2.1&q=60&raw_url=true&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8cHJvZHVjdHxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=1100 ' arc='....'>
+         </a>
+    
+        <div class='vertical_product_tital'   >
+     
+                <h8 class="header" >    {{product.Product_Discription}}...  </h8><br/>
+            </div>
+                <p class="price-header">₹ {{product.Product_Price}} </p><br/>
+        
+        <div class='vertical_product_text'>
+            <h11><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTWAF8b_ZnB76n_t988z6fty97TxPhHrcxhXg&usqp=CAU  " height="14" width="10"alt="" > 
+            {{product.Address}}   </h11><br/>
+            
+            <!-- <h11>{{product.Company_Name}}</h11>-->
+                
+                <p > {{product.Views}} Views </p>
+            </div>
+            <div class='vertical_product_togle'>
+                <a  data-bs-toggle="dropdown"  aria-expanded="" roal='button' href='/seting/product_block'  style='width:3rem;height:3rem;margin:0 0 0 0;' ><img src='https://cdn-icons-png.flaticon.com/128/225/225287.png '  ></a>
+                <ul class="dropdown-menu">
+                    <a class='toggle_more' href="/nav/why_we_are" >Add to explore list</a><br>
+                    <a  class='toggle_more'   href="/nav/why_we_are" >Location</a><br>
+                    <a  class='toggle_more'   href="/nav/why_we_are" >Contact Sellar </a><br>
+                    <a class='toggle_more' href="/nav/why_we_are" >Not intrested Product </a><br>
+  
+                    </ul>
+      
+       </div>
+        </div>
+    
+        </td>
+            
+                
+                
+                
+      
+{% endfor %}
+        
+</tr>
+        
+</table>
+
+</div>
+
+
+
+
+<!--
+
+
+<table class="block_product">
+    <h4 class ="block-name">See More</h4>     
+      
+ 
+       <tr>
+        <td><div class='block_aftpro' ><a href="  home/after_product_click  "><img class='block_img'src="  https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR_hBaaO40dL1aAiLRaU9_AjFP45H1zDmGi5A&usqp=CAU  "   ></a><br>
+            
+            
+            
+            <div class="block_detail">
+
+                <h8 class="header">    {{product.Product_name}}my product   </h8><br/>
+                <h8 class="price-header">₹ {{product.Product_price}} 2000/3 piece </h8><br/>
+                <h11><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTWAF8b_ZnB76n_t988z6fty97TxPhHrcxhXg&usqp=CAU " height="12" width="10"alt=""> 
+            {{product.Address}} at post   </h11><br/>
+                <h11>Industry Name</h11>
+                
+                <p > 25 Views </p>
+                
+            
+            
+            
+             
+                  
+              
+            
+        
+                </div>
+           </div>
+           </td>
+           
+           
+           
+           
+       </tr>
+</table>      
+      
+
+                -->
+
+         
+      
+             
+
+<div style="margin:0 0 6rem 0;"></div>
+
+
+
+
+
+
+
+
+{% endblock %}

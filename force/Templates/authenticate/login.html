@@ -1,0 +1,49 @@
+{% extends "home/home.html" %}
+
+{% load static %}
+{% block css %}
+{% load static %}
+ 
+<link rel="stylesheet" href="{% static 'css\authenticate\login.css'%}" />
+
+
+
+{% block style %}
+{% endblock  %}
+
+{% endblock  %}
+
+
+{% block body %}
+{% block create_account %}
+
+
+
+<form class="form" method="POST" action="/home/login" >
+   {% csrf_token %} 
+    <h2 class ="form-text">Login user</h2>
+    
+    <lable class="value" >Name     </lable><br>
+    <input class="form-input " type="text" name="username" required><br/>
+    <lable class="value" >Email     </lable><br/>
+    <input type="email"    class="form-input"   name="email"required><br/>
+    
+    <lable class="value">Password    </lable><br>
+    <input type="password"    class="form-input"  name="password"required><br>
+    <a href="/home/login/change_pass" class="button px-3 mx-5 my-2">change password</a><br>
+    
+   
+    
+    
+    
+    <input type="submit" value="Login"  class="btn-primary">
+    
+    <a href= "/home/login/create_account" class="button px-0 mx-3 my-2">Creat account</a>
+    
+    <a href="/home/logout" class="button  my-2 ">logout</a><br>
+    
+</form>
+{% endblock  %}
+
+
+{% endblock %}

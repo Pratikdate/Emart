@@ -1,0 +1,138 @@
+
+{% extends "home/home.html" %}
+
+
+{% block css %}
+<style>
+    .top-block{
+        height:80px;
+        width:;
+        border:1px solid;
+        text-align:center;
+        padding-top:30px;
+        color:gray;
+        background-color: #f0f8ff ;
+    
+    }
+    .Order-table{
+        
+        width:100%;
+       font-style:bold;
+        
+        color: gray ;
+        }
+
+    .Order-table a{
+        text-decoration:none;
+        color:black;
+       
+        
+        font-style:bold;
+    }
+    .row-h{border:solid;
+        
+    }
+     .Order-table button {border-radius:2rem;}
+        
+  
+    
+   
+    
+     
+       
+        
+   
+  
+</style>
+{% endblock %}
+
+{% block nav_down %}
+<td><div class ="tab-nav-down">
+    <a href="/product_manager/My_products"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRk85S1onZP8-MbH6ru4coAJHmKMtDGiUds-w&usqp=CAU " height="30" ></a><br>
+          <lable>Products</lable>
+           </div>
+           </td>
+
+<td><div class ="tab-nav-down">
+    <a href="/product_manager/graph"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRMLSLkT73-ZRhAIJD_GHo_res7UIWZ1RAGpA&usqp=CAU " height="30" ></a><br>
+          <lable>Performance</lable>
+           </div>
+           </td>
+
+{%endblock%}
+
+
+
+
+{% block body  %}
+
+
+
+
+
+
+
+
+<div class="top-block"   >
+    <h2>Orders get</h2>
+    
+</div>
+
+
+
+
+
+
+
+
+
+<table  class="Order-table"  cellpadding="5"cellcolor="gray"cellspacing="2"   >
+    <tr class="row-h">
+        <th scope="col">Id</th>
+        <th scope="col">Product Name</th>
+        
+        <th scope="col">Post</th>
+
+        </tr>
+
+{% for item in form %}        
+
+    
+    
+    <tr>
+        <td><div >
+    <a href="/product_mer/Order_get  ">{{item.id}}</a></div>
+            </td>
+        <td><div >
+    <a href="/product_manager/Order_get  ">{{item.Product_Name}}</a></div>
+            </td>
+        
+    
+            <td><div >
+    <a href="/product_manager/Order_get  ">{{item.Post_Date}}</a></div>
+            </td>
+        <td><div ><a href="/product_manager/Order_get_  " >
+        <button class='btn-primary'
+                    >Contact</button></a></div>
+            </td>
+        <td><div><a href="/product_manager/Order_get_delete/{{item.slug}}" >
+        
+        <button class='btn-danger'
+                
+                >Delete</button></a></div>
+        
+          
+           
+        
+
+    </tr>
+     
+    
+    
+{%  endfor %}
+    
+    
+</table>    
+     
+    
+{%  endblock %}

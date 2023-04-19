@@ -1,0 +1,115 @@
+
+
+{% extends "home/home.html" %}
+
+
+{% block css%}
+
+{% load static %}
+ 
+<link rel="stylesheet" href="{% static 'css\home\manufactures_style.css'%}" />
+
+{% endblock%}
+
+
+{% block manufacture %}
+
+<table class='company_choice_category'>
+    <tr>
+    <td>
+    <div class=' company_choice_category_item '>
+        <p >All Category </p>
+        </div> </td>
+         <td>
+    <div class=' company_choice_category_item '>
+        <p >Plastic products </p>
+        </div> </td>
+         <td>
+    <div class=' company_choice_category_item '>
+        <p >Plastic products </p>
+        </div></td>
+        
+    
+</table>
+
+
+
+   
+
+<table class='company_product_and_head'  >
+    
+    <h4 class ="block-name"></h4>     
+    
+        
+    
+{% for key, value in product_data.items %}     
+    <tr>
+           
+          <td>
+           
+         
+                  <div class='company_head_detail  '>
+                      
+                  
+                  <a class='img_company_logo' href='#'><img src='https://www.freepnglogos.com/uploads/starbucks-logo-png-25.png '></a><br/>
+                          
+                 
+                  
+                  
+             
+              
+          
+           
+             <div class='company_detail_text'>
+                   <p class='company_name'>{{key}} </p><br/>
+                   <spam class='header'>company verification</spam><br/>
+                 </div>
+             </div>
+        
+        
+    
+     
+    
+        <div class='scroll_part_comp_product'>
+          
+        
+
+            
+    
+            {%for product in value%}
+
+
+            
+            
+          
+         
+           <div class ='product_img'>
+            <a  href='{{product.url}}'><img src=' https://images.unsplash.com/photo-1555041469-a586c61ea9bc?crop=entropy&cs=tinysrgb&fm=jpg&ixlib=rb-1.2.1&q=60&raw_url=true&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8c29mYXxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=1100 '></a>
+             
+            <p class='price-header'>{{product.Product_Price}}</p>
+               
+         </div>
+             {%endfor%}
+            
+          
+          
+       
+          
+            
+
+         
+    
+           
+          
+        </div>
+        </td>      
+        </tr>
+         
+        {%endfor%}
+   
+</table>  
+
+  
+            
+
+{% endblock %}

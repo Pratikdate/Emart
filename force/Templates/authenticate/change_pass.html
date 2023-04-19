@@ -1,0 +1,117 @@
+{% extends "home/home.html" %}
+
+
+{% block css %}
+<style>
+   @media (min-width:35rem) {
+    .form{
+        
+        padding:20px 16px;
+        
+       
+        border-radius:5px;
+       
+        box-shadow:0px 15px 20px 0px;
+      
+        height:400px;
+        width:
+
+    }
+        
+}   
+    @media (max-width:35rem) {
+        .form{
+        
+        padding:20px 16px;
+        
+       
+        border-radius:5px;
+            margin:20px;
+       
+        box-shadow:0px 15px 20px 0px;
+      
+        height:400px;
+      
+
+    }
+    }
+
+    .change_passbody{
+        margin-top:0px;
+        
+    
+    }
+
+    .change_input{
+         margin-left:20px;
+        border-radius:5px;
+        margin-top:10px;
+        height:40px;
+        width:18rem;
+        border:0.2px solid;
+        
+    }
+    .checkbox{
+        margin:20px 0;
+        height:25px;
+        width:25px;
+        
+    }
+
+    .btn-primary{
+        
+        margin:0px 0px;
+        border-radius:10px;
+        height:40px;
+        box-shadow:0 0px 0px 0;
+        width:110px;
+        background-color:  #2E76CF    ;
+        
+    }
+
+    
+
+
+
+
+</style>
+{% endblock %}
+
+
+{% block body %}
+
+<form class="form_pass" method="POST" action="/home/login/change_pass">
+    <h2 style="text-align:center;color:gray;" >Change password</h2>
+    {% csrf_token %}
+
+    
+        <lable >Old password</lable>
+        <input type="password" class="change_input" placeholder="Enter your Old password" name="Old_pass" required><br>
+        <lable  >New Password</lable>
+        <input type="password" class="change_input" placeholder="New password" name="New_pass" required><br>
+        <lable >Confirm Password</lable>
+        <input type="password"class="change_input" placeholder="New password" name="Confirm_pass" required ><br>
+        
+        
+
+        
+    
+   
+    <div>
+        <input type="checkbox" class="checkbox" required>
+        <lable >Chake me out</lable><br>
+
+    </div>
+    <input type="submit" class="btn-primary" value="submit">
+    
+    
+    
+    
+    
+</form>
+
+
+
+
+
+{% endblock %}

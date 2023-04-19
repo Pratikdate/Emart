@@ -1,0 +1,115 @@
+{% extends "home/home.html" %}
+
+
+{% block css %}
+<style>
+    @media (min-width:35rem) {
+    .form{
+        
+        padding:20px 16px;
+        
+       
+        border-radius:5px;
+       
+        box-shadow:0px 15px 20px 0px;
+      
+        height:120rem;
+       
+
+    }
+        
+}   
+    @media (max-width:35rem) {
+        .form{
+        
+        padding:20px 16px;
+        
+       
+        border-radius:5px;
+            margin:20px;
+       
+        box-shadow:0px 15px 20px 0px;
+      
+        height:120rem;
+      
+
+    }
+    }
+    .form-input{
+        margin:10px 0 0 15px;
+        border-radius:5px;
+        border:0.2px solid;
+        box-shadow:0 0px 0px 0;
+        height:40px;
+        width:280px
+
+    }
+   
+      
+
+    
+    .form-text{
+        margin-bottom:30px;
+        border-radius:2px;
+        font-size:25px;
+        margin-left:80px;
+    
+    }
+    .btn-primary{
+        border-radius:4px;
+        height:40px;
+        width:90px;
+       
+        margin-top:30px;
+
+    }
+    .value{
+        margin-top:10px;}
+    .discription{
+        margin:10px 0 0 15px;
+        border-radius:5px;
+        border:0.2px solid;
+        padding:2px;
+        
+        
+        width:280px
+
+    }
+    
+    .form a{
+        margin :3rem 0 0 8rem;
+    }
+        
+
+
+
+
+</style>
+{% endblock  %}
+
+   
+{% block body %}
+
+
+<form class="form" method="POST"  enctype="multipart/form-data"   >
+    {% csrf_token %} 
+    
+    
+    <h2 class ="form-text">Add Product</h2>
+    
+    
+    
+
+
+
+    {{form.as_p}}
+   <input type="submit" value="Submit"  class="btn-primary">
+   
+    <a  href='/home/add_products/see_product_gig'>see your gig</a>
+    
+    
+    
+    
+</form>
+{% endblock %}
+   

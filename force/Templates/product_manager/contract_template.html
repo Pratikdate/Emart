@@ -1,0 +1,86 @@
+{% extends "home/home.html" %}
+
+
+{% block css %}
+<style>
+    .form{
+        padding:40px 15px;
+        
+       
+        border-radius:5px;
+        margin-bottom:30px;
+        box-shadow:0px 1px 2px 0px;
+        margin:20px;
+        height:36rem;
+
+    }
+    .form-input{
+        margin:10px 0 0 15px;
+        border-radius:5px;
+        border:0.2px solid;
+        box-shadow:0 0px 0px 0;
+        height:40px;
+        width:280px
+
+    }
+   
+      
+
+    
+    .form-text{
+        margin-bottom:30px;
+        border-radius:2px;
+        font-size:25px;
+        margin-left:80px;
+    
+    }
+    .btn-primary{
+        border-radius:4px;
+        height:40px;
+        width:90px;
+       
+        margin-top:30px;
+
+    }
+    .value{
+        margin-top:10px;}
+    .discription{
+        margin:10px 0 0 15px;
+        border-radius:5px;
+        border:0.2px solid;
+        
+        
+        width:280px
+
+    }
+    
+        
+
+
+
+
+</style>
+{% endblock  %}
+
+   
+{% block body %}
+
+
+<form class="form" method="post"  >
+    {% csrf_token %} 
+    
+    
+    <h2 class ="form-text">Contract Template</h2>
+    {{form.as_p}}
+   
+ 
+    
+    <input type="submit" value="Submit"  class="btn-primary">
+   
+    
+    <br>
+    
+    
+</form>
+{% endblock %}
+   

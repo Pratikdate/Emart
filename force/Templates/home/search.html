@@ -1,0 +1,311 @@
+{% extends "home/home.html" %}
+
+
+{% block css %}
+<style>
+  
+              
+        .search{
+                     
+              height:40px;
+              width:90%;
+              margin:6rem 0 4rem 1rem;
+              font-size:1rem;
+              text-align:left;
+            border:solid lightgray;
+          padding:0 0 0 1rem;
+              border-radius:6px;
+            
+          
+          }
+    .search:hover{
+        border: lightgray;
+    }
+    .submit_button{
+        height:2rem;
+        width:5rem;
+        color:#0673F8;
+        margin:10rem 2rem 0 0;
+        
+    }
+    .block-product{
+        height:14rem;
+              border:2px solid ;
+              
+              padding:0 0 1rem 0;
+            
+              
+              
+              
+          
+          }
+    .block_img{
+        margin:0rem 8px 0 0;
+        height:8rem;
+        width:10rem;
+
+    }
+    
+    
+         .block_img img{
+              height:10rem;
+             width:10rem;
+             
+              
+              
+}
+    .block-name{
+        margin:14rem 0 2rem 0rem;
+        font-style:bold;
+        font-size:1.5rem;
+    }
+    .block_aftpro{
+        display:flex;
+              height:10rem;
+              width:24.3rem;
+              
+              background-color:#F5F5F5;
+              
+              margin:0.5rem 0px 0 0rem;
+
+    }
+   
+    .block_detail{
+        
+            
+              margin:10px 0 10px 10px;
+}
+    .block_detail h8{color:;
+              font-weight:500;
+              font-size:1rem;
+              
+          }
+          .block_detail p , h11 {
+              opacity:0.6;
+              font-size:0.9rem;
+             
+          }
+    .block
+    @media (min-width:40rem){
+        .block_aftpro{
+        display:flex;
+              height:10rem;
+              width:24.3rem;
+              
+              border: 0.01px solid gray;
+              
+              margin:-0.1rem 0px 0rem 1rem;
+}
+        
+    }
+    
+     .block_detail a img {
+              margin:-2rem 0 0 12rem;
+              height:1.2rem;
+              width:1.2rem;
+          }
+    .submit_button{
+        height:2rem;
+        width:4rem;
+        color:blue;
+        
+        
+    }
+    
+        
+    
+    
+   
+
+
+</style>
+
+
+{% endblock %}
+
+{% block body %}
+
+<form class="d-flex" method="Get" action="/search/search_user">
+     
+        <input class="search" type="search" placeholder="Search" aria-label="Search" name='search' value='{{search_term}}'  >
+    
+ </form> 
+<div style='width:100%;height:5rem;padding:0 2rem 0 2rem; position:;'>
+        <h4 class ="block-name">Search</h4>         <hr/>
+ </div>
+
+
+
+
+<table class='vertical_block'>
+    
+ {% for product in articles%}  
+    <tr>
+       
+    <td><div class='block_1'>
+        <a class='vertical_product_img' href=' home/after_product_click/{{product.slug}} ' target=”_blank” >
+            
+        <img src='https://images.unsplash.com/photo-1523275335684-37898b6baf30?crop=entropy&cs=tinysrgb&fm=jpg&ixlib=rb-1.2.1&q=60&raw_url=true&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8cHJvZHVjdHxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=1100 ' arc='....'>
+         </a>
+    
+        <div class='vertical_product_tital'   >
+            <h8 class="header" >    {{product.Product_Discription}}...  </h8><br/>
+            </div>
+                <p class="price-header">₹ {{product.Product_Price}} </p><br/>
+        
+        <div class='vertical_product_text'>
+            <h11><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTWAF8b_ZnB76n_t988z6fty97TxPhHrcxhXg&usqp=CAU  " height="14" width="10"alt="" > 
+            {{product.Address}}   </h11><br/>
+            
+            <!-- <h11>{{product.Company_Name}}</h11>-->
+                
+                <p > {{product.Views}} Views </p>
+            </div>
+            <div class='vertical_product_togle'>
+                <a  data-bs-toggle="dropdown"  aria-expanded="" roal='button' href='/seting/product_block'  style='width:3rem;height:3rem;margin:0 0 0 0;' ><img src='https://cdn-icons-png.flaticon.com/128/225/225287.png '  ></a>
+                <ul class="dropdown-menu">
+                    <a class='toggle_more' href="/nav/why_we_are" >Add to explore list</a><br>
+                    <a  class='toggle_more'   href="/nav/why_we_are" >Location</a><br>
+                    <a  class='toggle_more'   href="/nav/why_we_are" >Contact Sellar </a><br>
+                    
+                    <a class='toggle_more' href="/nav/why_we_are" >Not intrested Product </a><br>
+  
+                    </ul>
+      
+       </div>
+        </div>
+    
+        </td>
+        
+        
+        
+     {%endfor%}
+          
+        </tr>
+        
+</table>
+         
+        
+                
+            
+            
+            
+             
+                  
+              
+            
+        
+                
+           
+           
+       
+
+{% for product in articles_Dis  %}
+
+<table>
+<tr>
+        <td><div class='block_aftpro' 
+                 >
+        <div class='block_img'  >
+            <a href="/home/after_product_click/{{product.slug}}">
+           <img src="{{product.Product_Img.url}}    "   >  
+            </a>
+            </div>
+            <br>
+            
+            
+            <div class="block_detail">
+
+                <h8 class="header">    {{product.Product_Name}}   </h8><br/>
+                <h10 class="price-header">₹ {{product.Product_Price}}  </h10><br/>
+                <h11><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTWAF8b_ZnB76n_t988z6fty97TxPhHrcxhXg&usqp=CAU " height="12" width="10"alt=""> 
+            {{product.Address}} </h11><br/>
+                <h11>  {{product.Company_Name}} </h11>
+                
+                <p > {{product.Views}}Views </p>
+                
+                 <a  data-bs-toggle="dropdown"  aria-expanded="" roal='button' href='/seting/product_block'  style='width:3rem;height:3rem;margin:0 0 0 0;' ><img src='https://cdn-icons-png.flaticon.com/128/225/225287.png '  ></a>
+                <ul class="dropdown-menu">
+                    <a class='toggle_more' href="/nav/why_we_are" >Add to explore list</a><br>
+                    <a  class='toggle_more'   href="/nav/why_we_are" >Location</a><br>
+                    <a  class='toggle_more'   href="/nav/why_we_are" >Contact Sellar </a><br>
+                    <a class='toggle_more' href="/nav/why_we_are" >Not intrested Product </a><br>
+  
+                    </ul>
+              
+            
+            
+            
+             
+                  
+              
+            
+        
+                </div>
+           </div>
+           </td>
+           
+           
+           
+           
+       </tr>
+</table>  
+{% endfor %}
+{% for product in articles_Price  %}
+
+<table>
+<tr>
+        <td><div class='block_aftpro' >
+            <div class='block_img'  >
+            
+                <a href="/home/after_product_click/{{product.slug}}">
+           
+                    <img src=" {{product.Product_Img.url}}    "   >  
+            
+                </a>
+            
+            </div>
+            
+            <br>
+            
+            <div class="block_detail">
+
+                <h8 class="header">    {{product.Product_Name}}   </h8><br/>
+                <h10 class="price-header">₹ {{product.Product_Price}}  </h10><br/>
+                <h11><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTWAF8b_ZnB76n_t988z6fty97TxPhHrcxhXg&usqp=CAU " height="12" width="10"alt=""> 
+            {{product.Address}} </h11><br/>
+                <h11>  {{product.Company_Name}} </h11>
+                
+                <p > 25 Views </p>
+                 <a  data-bs-toggle="dropdown"  aria-expanded="" roal='button' href='/seting/product_block'  style='width:3rem;height:3rem;margin:0 0 0 0;' ><img src='https://cdn-icons-png.flaticon.com/128/225/225287.png '  ></a>
+                <ul class="dropdown-menu">
+                    <a class='toggle_more' href="/nav/why_we_are" >Add to explore list</a><br>
+                    <a  class='toggle_more'   href="/nav/why_we_are" >Location</a><br>
+                    <a  class='toggle_more'   href="/nav/why_we_are" >Contact Sellar </a><br>
+                    <a class='toggle_more' href="/nav/why_we_are" >Not intrested Product </a><br>
+  
+                    </ul>
+            
+            
+            
+             
+                  
+              
+            
+        
+                </div>
+           </div>
+           </td>
+           
+           
+           
+           
+       </tr>
+</table>  
+{% endfor %}
+
+
+
+
+
+{% endblock %}

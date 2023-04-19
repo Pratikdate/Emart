@@ -1,0 +1,97 @@
+{% extends "home/home.html" %}
+
+
+{% block css %}
+{% endblock %}
+{% block nav %}
+{%endblock%}
+{% block body%}
+
+<table class='vertical_block' style='margin: 0 1rem 0 0.2rem;'>
+    
+ {% for product in wish_product%} 
+    {% for product in product%} 
+    <tr>
+       
+    <td><div class='block_1'>
+        <a class='vertical_product_img' href=' home/after_product_click/{{product.slug}} '>
+            
+        <img src='https://images.unsplash.com/photo-1523275335684-37898b6baf30?crop=entropy&cs=tinysrgb&fm=jpg&ixlib=rb-1.2.1&q=60&raw_url=true&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8cHJvZHVjdHxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=1100 ' arc='....'>
+         </a>
+    
+        <div class='vertical_product_tital'>
+     
+                <h8 class="header">    {{product.Product_Discription}}...  </h8><br/>
+            </div>
+                <p class="price-header">₹ {{product.Product_Price}} </p><br/>
+       
+        <div class='vertical_product_text'>
+            <h11><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTWAF8b_ZnB76n_t988z6fty97TxPhHrcxhXg&usqp=CAU  " height="14" width="10"alt="" > 
+            {{product.Address}}   </h11><br/>
+            
+             
+                
+                <p > {{product.Views}} Views </p>
+            </div>
+            <div class='vertical_product_togle'>
+                <a  data-bs-toggle="dropdown"  aria-expanded="" roal='button' href='/seting/product_block'  style='width:3rem;height:3rem;margin:0 0 0 0;' ><img src='https://cdn-icons-png.flaticon.com/128/225/225287.png '  ></a>
+                <ul class="dropdown-menu">
+                    <a class='toggle_more' href="/nav/why_we_are" >Add to explore list</a><br>
+                    <a  class='toggle_more'   href="/nav/why_we_are" >Location</a><br>
+                    <a  class='toggle_more'   href="/nav/why_we_are" >Contact Sellar </a><br>
+                    <a class='toggle_more' href="/nav/why_we_are" >Not intrested Product </a><br>
+  
+                    </ul>
+      
+       </div>
+        </div>
+    </td>
+        
+        
+       <!-- <td><div class='block_1'>
+        <a class='vertical_product_img' href=' home/after_product_click/{{product.slug}} ' >
+        <img src='https://images.unsplash.com/photo-1542291026-7eec264c27ff?crop=entropy&cs=tinysrgb&fm=jpg&ixlib=rb-1.2.1&q=60&raw_url=true&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTB8fHByb2R1Y3R8ZW58MHx8MHx8&auto=format&fit=crop&w=1100 ' arc='....'>
+         </a>
+    
+        <div class='vertical_product_tital'>
+     
+                <h8 class="header">    {{product.Product_Discription}}... </h8><br/>
+            </div>
+                <p class="price-header">₹ {{product.Product_Price}}</p><br/>
+      
+        <div class='vertical_product_text'>
+            <h11><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTWAF8b_ZnB76n_t988z6fty97TxPhHrcxhXg&usqp=CAU " height="14" width="10"alt="" > 
+            {{product.Address}}   </h11><br/>
+            
+                 
+            <p > {{product.Views}} Views</p>
+            </div>
+            <div class='vertical_product_togle'>
+                <a  data-bs-toggle="dropdown"  aria-expanded="" roal='button' href='/seting/product_block'  style='width:3rem;height:3rem;margin:0 0 0 0;' ><img src='https://cdn-icons-png.flaticon.com/128/225/225287.png '  ></a>
+                <ul class="dropdown-menu">
+                    <a class='toggle_more' href="/nav/why_we_are" >Add to explore list</a><br>
+                    <a  class='toggle_more'   href="/nav/why_we_are" >Location</a><br>
+                    <a  class='toggle_more'   href="/nav/why_we_are" >Contact Sellar </a><br>
+                    <a class='toggle_more' href="/nav/why_we_are" >Not intrested Product </a><br>
+  
+                    </ul>
+      
+       </div>
+        </div>
+    
+        </td>-->
+       
+            
+        </tr>
+        {%endfor%}
+    {%endfor%}
+</table>
+      
+      
+ 
+      
+{%endblock%}
+
+        
+
+  

@@ -1,0 +1,170 @@
+{% extends "home/home.html" %}
+
+
+{% block css %}
+<style>
+    @media (max-width:35rem){
+    .full_page{
+        height:30rem;
+        width:20rem;
+        margin:2rem 0  0 2rem;
+        box-shadow:0 0px 0px 0;
+    }
+    .img_logo{
+        margin:3rem 0 0 5rem;
+        height:10rem;
+        width:10rem;
+        border-radius:50rem;
+        border:1px solid;
+    }
+    .tital{
+        margin: 0 0 0 5rem;
+        color:gray;
+    }
+    .text_down{
+        height:8rem;
+        width:18rem;
+       
+        overflow:hidden;
+        border-radius:4px;
+        margin: 3rem 0 0 1rem;
+        color:black;
+        opacity:0.9;
+        box-shadow:0 6px 8px 0;
+        padding:2rem 2rem 2rem 2rem;
+    }
+        #more_data{
+            height:10rem;
+            width:18rem;
+            overflow:hidden;
+        border-radius:4px;
+        
+            
+           
+        color:gray;
+        
+        padding: 0rem 0rem 0rem;
+            
+        }
+        #form_profile{
+            height:40rem;
+            background-color:white;
+            width:20rem;
+            z-index:2;
+            position:absolute;
+            margin:-12rem 0 0rem 2rem;
+            padding:2rem;
+            color:gray;
+            box-shadow:0 6px 8px 0;
+            padding:2rem 2rem 2rem 2rem;
+            display:none;
+            
+        }
+  
+}    
+    
+      @media (min-width:35rem){
+          
+          .full_page{
+        height:30rem;
+        width:20rem;
+        margin:2rem 0  0 2rem;
+        box-shadow:0 0px 0px 0;
+    }
+    .img_logo{
+        margin:3rem 0 0 6rem;
+        height:8rem;
+        width:8rem;
+        border-radius:50rem;
+        border:1px solid;
+    }
+    .tital{
+        margin: 0 0 0 5rem;
+        color:gray;
+    }
+    .text_down{
+        margin: 3rem 0 0 2rem;
+        color:gray;
+        box-shadow:0 6px 8px 0;
+    }
+          #form_profile{
+              margin:0 0 4rem 0;
+              height:20rem;
+              
+
+          }
+          
+}
+
+
+
+</style>
+<script>
+    function see_more(){
+        document.getElementById('text_down').style.height='20rem';
+    };
+    function form_profile_view(){
+        document.getElementById('form_profile').style.display='inline-block';
+    };
+    
+    
+    
+</script>
+{% endblock  %}
+
+   
+{% block body %}
+
+<div class='full_page' >
+    <h1 style='font-family:fantasy; color:black;' class='tital'>User Profile</h1>
+    
+    <div class='img_logo'>
+        <img src='' >
+        </div>
+        
+        <div id='text_down'class='text_down'>
+            <img onclick='see_more()' src=' https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTTY63r6c5TAj2LbosIQXI_cjFcwcRal5P25w&usqp=CAU ' style='height:1.2rem; margin:3.4rem 0 0 14rem;position:absolute; '>
+
+{% for objects in model %}         
+            
+            <h6>{{objects.User_Stetus}}</h6>
+            <h6>{{user.username}}</h6>
+            <h10>{{objects.User_Bio}}</h10><br/>
+            
+            <div id='more_data'>
+                <br/>
+            
+            <h10>{{user.email}}</h10><br/>
+            
+            <h10> {{objects.User_Location}} </h10><br/>
+            <h10> {{objects.User_Company}}</h10><br/>
+            <h10> {{objects.User_Website}}</h10><br/>
+            <h10> {{objects.User_Twitter}}</h10><br/>
+                
+              </div>  
+{% endfor %}           
+            
+        
+    </div>
+    <button  class='btn-primary'style='margin:2rem 0 4rem 16rem;height:2rem;width:4rem; border-radius:4px;'type='button' onclick='form_profile_view()'  >Edit</button>
+    
+
+</div>
+
+        
+{% if  request.user.is_anonymous %}  
+<form id="form_profile" method="post" action='/user'>
+{% else %}
+    <form id="form_profile" method="post" >
+{%endif%}
+    {% csrf_token %}
+    
+    {{form.as_p}}
+      
+    <input type="submit" value="Creat"  class="btn-primary">
+</form>
+
+
+
+{% endblock %}
+   

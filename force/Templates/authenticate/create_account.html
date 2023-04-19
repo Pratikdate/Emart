@@ -1,0 +1,93 @@
+{% extends "home/home.html" %}
+
+
+{% block css %}
+<style>
+    @media (min-width:35rem) {
+    .form{
+        
+        padding:20px 16px;
+        
+       
+        border-radius:5px;
+       
+        box-shadow:0px 15px 20px 0px;
+      
+        height:400px;
+        width:
+
+    }
+        
+}   
+    @media (max-width:35rem) {
+        .form{
+        
+        padding:20px 16px;
+        
+       
+        border-radius:5px;
+            margin:20px;
+       
+        box-shadow:0px 15px 20px 0px;
+      
+        height:400px;
+      
+
+    }
+    }
+    .form-input{
+         
+        border-radius:5px;
+       
+        margin:0rem 0 0 30px;
+        
+        height:40px;
+        width:16rem;
+        border:0.2px solid;
+        
+
+    }
+    
+   .value{
+        margin:6px 0 0 0;
+        }
+      
+
+    
+    .form-text{
+        margin-bottom:20px;
+        border-radius:3px;
+        font-size:30px;
+        margin-left:80px;
+    
+    }
+    .btn-primary{
+       border-radius:4px;
+        height:40px;
+        width:90px;
+       
+        margin-top:30px;
+    
+
+
+
+</style>
+{% endblock  %}
+
+   
+{% block body %}
+
+
+<form class="form" method="post" action="/home/login/create_account" >
+    {% csrf_token %} 
+    <h2 class ="form-text">Create Account</h2>
+      {{form.as_p}}
+    <input type="submit" value="Creat"  class="btn-primary">
+    <a href="/login" class="button px-0 mx-3 my-2">login</a>
+    
+    <br>
+    
+    
+</form>
+{% endblock %}
+   
