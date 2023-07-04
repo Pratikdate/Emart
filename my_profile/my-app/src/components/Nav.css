@@ -1,0 +1,32 @@
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+@media (min-width: 768px) {
+    #Nav_bar{
+        position:fixed;
+        width:fit-content;
+        align-items: center;
+        margin-left: 35%;
+        font-size: large;
+        margin-bottom: 60rem;
+    
+    }
+
+
+}
+
+
+@media (max-width: 768px) {
+    #Nav_bar{
+        position:fixed;
+        width:fit-content;
+        align-items: center;
+        margin-left: 20%;
+        font-size: medium;
+        margin-bottom: 60rem;
+    
+    }
+
+    
+}

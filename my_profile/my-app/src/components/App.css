@@ -1,0 +1,38 @@
+
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+
+@media (min-width: 768px) {
+  #profile{
+    height: auto;
+    position:absolute;
+    margin-top: 6%;
+    align-items: center;
+    margin-left: 37%;
+  }
+  .my_img{
+    height:12rem;
+  }
+
+  #link-icon{
+    margin: 0 0 0 0% ;
+    width:fit-content;
+  }
+  
+  
+  
+}
+
+
+@media (max-Width:768px) {
+  #profile{
+    height: auto;
+    position:absolute;
+    margin:13% 23%  ;
+   
+    align-items: center;
+  }
+  
+}
